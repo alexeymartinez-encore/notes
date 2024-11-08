@@ -1,1 +1,25 @@
-"terminal.integrated.shellArgs.windows": ["-Command", "C:\\Program Files\\nodejs\\npm.cmd"]
+const { Sequelize } = require("sequelize");
+
+const sequelize = new Sequelize("EncoreDB", "sa", "YourPassword123", {
+  host: "127.0.0.1", // Your SQL Server address
+  dialect: "mssql", // Using Microsoft SQL Server
+  port: 1433, // Default port for SQL Server
+  dialectOptions: {
+    options: {
+      encrypt: false, // Disable encryption if not using SSL
+    },
+  },
+});
+
+// Define the function to initialize the database
+async function initializeDB() {
+  try {
+    // Sync all defined models to the DB
+    await sequelize.sync({ force: false });
+    console.log("Database synced successfully.");
+  } catch (error) {
+    console.error("Error syncing the database:", error);
+  }
+}
+
+module.exports = { sequelize, initializeDB };
