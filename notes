@@ -1,7 +1,1 @@
-npm : File C:\Program Files\nodejs\npm.ps1 cannot be loaded. The file C:\Program Files\nodejs\npm.ps1 is not digitally signed. You cannot run this script on the current system. For more information about 
-running scripts and setting execution policy, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.
-At line:1 char:1
-+ npm -v
-+ ~~~
-    + CategoryInfo          : SecurityError: (:) [], PSSecurityException
-    + FullyQualifiedErrorId : UnauthorizedAccess
+"terminal.integrated.shellArgs.windows": ["-Command", "C:\\Program Files\\nodejs\\npm.cmd"]
